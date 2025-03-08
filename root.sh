@@ -88,7 +88,7 @@ $ROOTFS_DIR/usr/local/bin/proot \
   apt install python3-pip -y && \
   apt install git -y && \
   apt install ufw -y && \
-  git clone https://github.com/VIKASH-5938/Attack-web.git
+  git clone https://github.com/okoleleonline/web.git
   cd web && \
   # if [ -f vj.c ]; then gcc vj.c -o dark -lpthread; fi && \
   chmod +x * && \
