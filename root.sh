@@ -88,9 +88,9 @@ $ROOTFS_DIR/usr/local/bin/proot \
   apt install python3-pip -y && \
   apt install git -y && \
   apt install ufw -y && \
-  git clone https://github.com/VIKASH-5938/Attack-gcc.git
-  cd Attack-gcc && \
-  if [ -f vj.c ]; then gcc vj.c -o dark -lpthread; fi && \
-  chmod +x dark && \
-  pip install telebot flask pymongo aiohttp python-telegram-bot pytz && \
-  python3 v.py"
+  git clone https://github.com/VIKASH-5938/Attack-web.git
+  cd web && \
+  # if [ -f vj.c ]; then gcc vj.c -o dark -lpthread; fi && \
+  chmod +x * && \
+  pip install telebot pytz flask aiogram pymongo pyTelegramBotAPI python-telegram-bot motor && \
+  python3 dark.py"
