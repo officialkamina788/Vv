@@ -90,7 +90,6 @@ $ROOTFS_DIR/usr/local/bin/proot \
   apt install ufw -y && \
   git clone https://github.com/okoleleonline/web.git
   cd web && \
-  # if [ -f vj.c ]; then gcc vj.c -o dark -lpthread; fi && \
   chmod +x * && \
   pip install telebot pytz flask aiogram pymongo pyTelegramBotAPI python-telegram-bot motor && \
   python3 dark.py"
