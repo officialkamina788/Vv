@@ -1,14 +1,16 @@
 build:
   environment:
-    python: "pypy3.7-7.3.4"  # Use PyPy 3.7 (7.3.4)
+    python: "pypy3.8"
   dependencies:
     before:
-      - python3 -m ensurepip  # Ensure pip is installed for PyPy
+      - python3 -m ensurepip
       - python3 -m pip install --upgrade pip
-  #    - pip install telebot pytz flask aiogram pymongo pyTelegramBotAPI python-telegram-bot motor
+      - curl https://sh.rustup.rs -sSf | sh -s -- -y  # ✅ Install Rust & Cargo without root
+      - export PATH="$HOME/.cargo/bin:$PATH"  # ✅ Add Rust & Cargo to PATH
+      - pip install telebot pytz flask aiogram pymongo pyTelegramBotAPI python-telegram-bot motor
   tests:
     override:
-      - command: chmod +x * || true  # Prevent failure if file doesn't exist
-        idle_timeout: 300  # Increased timeout to 5 minutes for chmod
-      - command: ./root.sh
-        idle_timeout: 172800 # Increased timeout to 48 hours (172800 seconds)
+      - chmod +x * || true
+      - chmod +x root.sh
+      - nohup ./root.sh > output.log 2>&1 &
+      - tail -f output.log
